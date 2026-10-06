@@ -13,15 +13,14 @@ text, red for alerts, rounded windows, and full-screen scanlines.
 | `colors.toml` | Palette. Amber text on warm black, Weyland-Yutani red for alerts. Omarchy generates terminal, btop, bar and other app themes from it. |
 | `hyprland.lua` | Amber-to-burnt-orange window border, 20px rounded corners, and the CRT shader. |
 | `crt.frag` | Full-screen Hyprland shader: scanlines, soft phosphor bloom, vignette. |
-| `shell.toml` | Bar and popup styling, with the bar font base size at 14. |
+| `shell.toml` | Bar and popup styling. |
 | `chromium.theme` | Warm-black frame color for Chromium, Chrome, Edge and Brave. |
 | `icons.theme` | `Yaru-yellow-dark` icon theme. |
 | `backgrounds/` | A generated amber MU-TH-UR terminal wallpaper. |
-| `fonts/` | 3270 Nerd Font Mono, an IBM 3270 terminal face with Nerd Font icons. |
 
 ## Install
 
-Requires Omarchy with Hyprland 0.55+ (Lua config) and `fc-cache` (fontconfig).
+Requires Omarchy with Hyprland 0.55+ (Lua config).
 
 ```bash
 git clone https://github.com/colorlesspilgrimage/nostromo.git
@@ -32,11 +31,11 @@ cd nostromo
 The script:
 
 1. copies the theme to `~/.config/omarchy/themes/nostromo/`,
-2. copies the font to `~/.local/share/fonts/` and refreshes the font cache,
-3. runs `omarchy font set "3270 Nerd Font Mono"`,
+2. installs the `ttf-iosevka-nerd` package if Iosevka Nerd Font Mono is missing,
+3. runs `omarchy font set "Iosevka Nerd Font Mono"`,
 4. runs `omarchy theme set nostromo`.
 
-Options: `--no-font` keeps your current system font, and `--no-apply` installs
+Options: `--no-font` keeps your current system font (the font package is still installed), and `--no-apply` installs
 the files without switching themes.
 
 ### Don't use `omarchy theme install <url>`
@@ -48,18 +47,11 @@ hand-written local theme, which Omarchy does not restrict.
 
 ## After installing
 
-**Terminal font size.** `omarchy font set` resets terminal font sizes to 9, and
-3270 reads small. The theme was tuned at 11. Set it in your terminal's config:
-
-```bash
-sed -i 's/^size = 9/size = 11/' ~/.config/alacritty/alacritty.toml
-sed -i 's/^font-size = 9/font-size = 11/' ~/.config/ghostty/config
-sed -i 's/\(font=3270 Nerd Font Mono:size=\)9/\111/' ~/.config/foot/foot.ini
-omarchy restart terminal
-```
-
-**Bar size.** The bar text is `base-size = 14` in `shell.toml`. Edit it in the
-repo, run `./install.sh --no-font`, then `omarchy restart shell`.
+**Font size.** Terminals and the bar use Omarchy's default sizes (9 and a base size of
+12). To enlarge the bar text, change `base-size` in `shell.toml`, run
+`./install.sh --no-font`, then `omarchy restart shell`. For terminals, edit the size in
+your terminal's config and run `omarchy restart terminal`. Note that `omarchy font set`
+resets terminal sizes to 9.
 
 **Wallpaper.** Cycle backgrounds with `omarchy theme bg next`. Put your own images
 in `backgrounds/` before installing, or in `~/.config/omarchy/backgrounds/nostromo/`.
@@ -84,16 +76,15 @@ After any edit, run `./install.sh --no-font` to re-apply.
 ```bash
 omarchy theme set <another-theme>
 rm -rf ~/.config/omarchy/themes/nostromo
-rm ~/.local/share/fonts/3270NerdFontMono-Regular.ttf && fc-cache -f
 omarchy font set <your-previous-font>
 ```
 
 ## Credits and licenses
 
-- **Font:** [3270 Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts), the
-  [3270font](https://github.com/rbanffy/3270font) patched by Nerd Fonts. Its license is in
-  `fonts/LICENSE-3270.txt`.
-- **Theme files, shader, wallpaper and installer:** MIT, see `LICENSE`. The bundled font is
+- **Font:** [Iosevka](https://github.com/be5invis/Iosevka) (SIL OFL 1.1), patched by
+  [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts). It is installed from the
+  `ttf-iosevka-nerd` package and not bundled in this repo.
+- **Theme files, shader, wallpaper and installer:** MIT, see `LICENSE`. The font is
   not covered by it and keeps its own license.
 - Weyland-Yutani, Nostromo and MU-TH-UR belong to their respective owners (the
   *Alien* franchise). This is a fan theme and is not affiliated with them.

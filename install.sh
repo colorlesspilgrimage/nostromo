@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install the Nostromo theme for Omarchy: theme files, bundled font, and apply.
+# Install the Nostromo theme for Omarchy: theme files, font package, and apply.
 #
 #   ./install.sh               install theme + font, set the font, apply the theme
 #   ./install.sh --no-font     install the font but keep your current system font
@@ -21,22 +21,21 @@ command -v omarchy >/dev/null || { echo "omarchy not found on PATH" >&2; exit 1;
 
 src="$(cd "$(dirname "$0")" && pwd)"
 theme_dir="$HOME/.config/omarchy/themes/nostromo"
-font_dir="$HOME/.local/share/fonts"
 
-# Theme: only the files Omarchy needs (not the README, fonts, or docs).
+# Theme: only the files Omarchy needs (not the README or docs).
 rm -rf "$theme_dir"
 mkdir -p "$theme_dir"
 cp -r "$src"/{colors.toml,crt.frag,hyprland.lua,shell.toml,chromium.theme,icons.theme,preview.png,backgrounds} "$theme_dir"/
 echo "Installed theme to $theme_dir"
 
-# Font: 3270 Nerd Font Mono, per-user.
-mkdir -p "$font_dir"
-cp "$src"/fonts/*.ttf "$font_dir"/
-fc-cache -f "$font_dir"
-echo "Installed font to $font_dir"
+# Font: Iosevka Nerd Font Mono, from the Arch package.
+if ! fc-list | grep -Fqi "Iosevka Nerd Font Mono"; then
+  omarchy-pkg-add ttf-iosevka-nerd
+  fc-cache -f
+fi
 
 if $set_font; then
-  omarchy font set "3270 Nerd Font Mono"
+  omarchy font set "Iosevka Nerd Font Mono"
   echo "Set system font. Terminal font sizes reset; see the README to set them."
 fi
 
