@@ -16,7 +16,7 @@ text, red for alerts, rounded windows, and full-screen scanlines.
 | `shell.toml` | Bar and popup styling. |
 | `chromium.theme` | Warm-black frame color for Chromium, Chrome, Edge and Brave. |
 | `icons.theme` | `Yaru-yellow-dark` icon theme. |
-| `backgrounds/` | A generated amber MU-TH-UR terminal wallpaper. |
+| `backgrounds/` | Four generated amber CRT wallpapers: MU-TH-UR terminal, motion tracker, LV-426 terrain, Weyland-Yutani logo. |
 
 ## Install
 
