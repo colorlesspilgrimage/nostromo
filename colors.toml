@@ -1,0 +1,37 @@
+# Nostromo — amber CRT terminal, Weyland-Yutani corporate hardware.
+mode = "dark"
+
+accent = "#ffb627"
+selection = "#4a2a08"
+selection_foreground = "#ffd98a"
+muted = "#7a4a12"
+
+background = "#0b0704"
+dark_background = "#070402"
+darker_background = "#040201"
+lighter_background = "#1a0f06"
+
+foreground = "#ffa31a"
+dark_foreground = "#a8620f"
+light_foreground = "#ffc75a"
+bright_foreground = "#ffe0a3"
+
+hyprland_active_border = "rgba(ffb627ee) rgba(c4400fee) 45deg"
+hyprland_inactive_border = "rgba(4a2a08aa)"
+
+# Warm palette; red is the Weyland-Yutani logo/alert color.
+red = "#ff3b2f"
+yellow = "#ffd23f"
+orange = "#ff7a1a"
+green = "#b5c23a"
+cyan = "#7fc7a4"
+blue = "#d9a066"
+magenta = "#e0795a"
+brown = "#8a5a1f"
+
+bright_red = "#ff6b5c"
+bright_yellow = "#ffe27a"
+bright_green = "#d3de6a"
+bright_cyan = "#a6e3c6"
+bright_blue = "#f0c08a"
+bright_magenta = "#f09a80"
