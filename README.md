@@ -93,7 +93,7 @@ omarchy font set <your-previous-font>
 - **Font:** [3270 Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts), the
   [3270font](https://github.com/rbanffy/3270font) patched by Nerd Fonts. Its license is in
   `fonts/LICENSE-3270.txt`.
-- **Theme files and wallpaper:** no license has been chosen yet. Add a `LICENSE`
-  file before publishing if you want others to be able to reuse them.
+- **Theme files, shader, wallpaper and installer:** MIT, see `LICENSE`. The bundled font is
+  not covered by it and keeps its own license.
 - Weyland-Yutani, Nostromo and MU-TH-UR belong to their respective owners (the
   *Alien* franchise). This is a fan theme and is not affiliated with them.
