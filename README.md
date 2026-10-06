@@ -24,7 +24,7 @@ text, red for alerts, rounded windows, and full-screen scanlines.
 Requires Omarchy with Hyprland 0.55+ (Lua config) and `fc-cache` (fontconfig).
 
 ```bash
-git clone <this-repo-url> nostromo
+git clone https://github.com/colorlesspilgrimage/nostromo.git
 cd nostromo
 ./install.sh
 ```
