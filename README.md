@@ -56,13 +56,20 @@ resets terminal sizes to 9.
 **Wallpaper.** Cycle backgrounds with `omarchy theme bg next`. Put your own images
 in `backgrounds/` before installing, or in `~/.config/omarchy/backgrounds/nostromo/`.
 
+## Daylight variant
+
+`nostromo-day` (source in `day/`) is a light theme for bright rooms: dark umber
+text on warm paper, the same amber and red accents, no CRT shader and a plain
+paper wallpaper. `./install.sh` installs it next to `nostromo`; switch with
+`omarchy theme set nostromo-day` or the theme menu.
+
 ## Customizing
 
 - **Turn off the scanlines.** Remove the `screen_shader` line from `hyprland.lua`
   and reinstall. Note that the shader also appears in screenshots and recordings,
   and Hyprland cannot skip compositing for fullscreen apps while it is active.
-- **Tune the CRT effect.** In `crt.frag`, `0.12` is bloom strength, `0.88` is
-  scanline darkness and `0.45` is vignette strength.
+- **Tune the CRT effect.** In `crt.frag`, `0.05` is bloom strength, `0.95` is
+  scanline darkness and `0.15` is vignette strength (raise toward 0.12 / 0.88 / 0.45 for a stronger CRT look).
 - **Corner radius.** Change `rounding = 20` in `hyprland.lua`.
 - **Colors.** `shell.toml` is a copy of what Omarchy generates from
   `colors.toml`, with the font size changed. If you edit colors in `colors.toml`,

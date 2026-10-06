@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install the Nostromo theme for Omarchy: theme files, font package, and apply.
 #
-#   ./install.sh               install theme + font, set the font, apply the theme
+#   ./install.sh               install themes (nostromo, nostromo-day) + font, set the font, apply nostromo
 #   ./install.sh --no-font     install the font but keep your current system font
 #   ./install.sh --no-apply    install files only
 set -euo pipefail
@@ -27,6 +27,13 @@ rm -rf "$theme_dir"
 mkdir -p "$theme_dir"
 cp -r "$src"/{colors.toml,crt.frag,hyprland.lua,shell.toml,chromium.theme,icons.theme,preview.png,backgrounds} "$theme_dir"/
 echo "Installed theme to $theme_dir"
+
+# Daylight variant, installed as its own theme: nostromo-day.
+day_dir="$HOME/.config/omarchy/themes/nostromo-day"
+rm -rf "$day_dir"
+mkdir -p "$day_dir"
+cp -r "$src"/day/* "$day_dir"/
+echo "Installed daylight theme to $day_dir"
 
 # Font: Iosevka Nerd Font Mono, from the Arch package.
 if ! fc-list | grep -Fqi "Iosevka Nerd Font Mono"; then

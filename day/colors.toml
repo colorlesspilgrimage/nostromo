@@ -1,0 +1,36 @@
+# Nostromo Day — daylight variant. Dark umber ink on warm paper, same amber/red accents.
+mode = "light"
+
+accent = "#b35900"
+selection = "#f2c98a"
+selection_foreground = "#2a1500"
+muted = "#8a6a45"
+
+background = "#f4ead7"
+dark_background = "#e9dcc3"
+darker_background = "#ddcdb0"
+lighter_background = "#fbf5e8"
+
+foreground = "#2e1a08"
+dark_foreground = "#5c3a14"
+light_foreground = "#1a0d03"
+bright_foreground = "#000000"
+
+hyprland_active_border = "rgba(b35900ee) rgba(c4400fee) 45deg"
+hyprland_inactive_border = "rgba(8a6a4566)"
+
+red = "#c0261b"
+yellow = "#a87500"
+orange = "#c4560a"
+green = "#5c6b0e"
+cyan = "#1f7a5c"
+blue = "#8a5420"
+magenta = "#a8442c"
+brown = "#6e4713"
+
+bright_red = "#e03a2c"
+bright_yellow = "#c48a00"
+bright_green = "#74861a"
+bright_cyan = "#2a9474"
+bright_blue = "#a86a2e"
+bright_magenta = "#c45a40"
